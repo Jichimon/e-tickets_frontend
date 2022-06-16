@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthModule } from './auth/auth.module';
+import { EventModule } from './event/event.module';
 import { UserModule } from './user/user.module';
 
 const routes: Routes = [
@@ -14,8 +15,12 @@ const routes: Routes = [
     loadChildren: () => UserModule
   },
   {
+    path: 'event',
+    loadChildren: () => EventModule
+  },
+  {
     path:'**',
-    redirectTo:'auth'
+    redirectTo:'event'
   }
 ];
 
